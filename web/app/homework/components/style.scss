@@ -1,0 +1,28 @@
+.nickname-box {
+  .character-name-box {
+    display: grid;
+  }
+
+  input {
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #000000;
+  }
+
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+  }
+
+  .checkbox-item {
+    width: 20px;
+    height: 20px;
+  }
+
+  .content-checked-item {
+    border-bottom: 1px solid #707070;
+  }
+}

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+main {
+  height: calc(100vh - 40px);
+}
+
+.titleBar {
+  display: block;
+  height: 40px;
+  -webkit-app-region: drag;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
