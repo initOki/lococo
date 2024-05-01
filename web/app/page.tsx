@@ -28,6 +28,21 @@ export default function Home() {
     }
   };
 
+  const switchRenderBadge = (type: string) => {
+    switch (type) {
+      case '공지':
+        return <span className="default-badge notice">공지</span>;
+      case '이벤트':
+        return <span className="default-badge event">이벤트</span>;
+      case '점검':
+        return <span className="default-badge inspection">점검</span>;
+      case '상점':
+        return <span className="default-badge shop">상점</span>;
+      default:
+        return <span className="default-badge">공지</span>;
+    }
+  };
+
   useEffect(() => {
     if (apiToken === '') return;
     getNotice();
@@ -42,7 +57,8 @@ export default function Home() {
           <div className="mb-[50px]">
             {notice && notice.length > 0
               ? notice.map((item: any, index) => (
-                  <div key={index} className="pb-[10px]">
+                  <div key={index} className="mb-[30px]">
+                    <span>{switchRenderBadge(item.Type)}</span>
                     <Link href={item.Link} target="_blank">
                       {item.Title}
                     </Link>

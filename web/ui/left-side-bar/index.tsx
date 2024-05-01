@@ -34,13 +34,25 @@ const LeftSideBar = () => {
     <div className="left-side-bar flex flex-col justify-between">
       <ul>
         <li className="mb-[10px]">
-          <Link href="/">Home</Link>
+          <Link href="/">공지사항</Link>
         </li>
         <li className="mb-[10px]">
           <Link href="/homework">숙제</Link>
         </li>
-        <li>
+        {/* <li className="mb-[10px]">
+          <Link href="/loatodo">로아 TODO</Link>
+        </li> */}
+        <li className="mb-[10px]">
+          <Link href="/cheatsheet">컨닝페이퍼</Link>
+        </li>
+        <li className="mb-[10px]">
           <Link href="/optimization">아이스팽</Link>
+        </li>
+        <li className="mb-[10px]">
+          <Link href="/loawa">로아와</Link>
+        </li>
+        <li className="mb-[10px]">
+          <Link href="/kloa">클로아</Link>
         </li>
       </ul>
 

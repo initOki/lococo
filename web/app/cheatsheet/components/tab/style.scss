@@ -1,0 +1,10 @@
+.cheat-sheet-list {
+    display: flex;
+    padding: 0 10px 10px 10px;
+    border-bottom: 1px solid #FFFFFF;
+
+    li {
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}

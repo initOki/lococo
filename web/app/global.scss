@@ -7,7 +7,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: #1c1c1c;
   overflow: hidden;
   color: #FFFFFF;
 }
@@ -27,3 +27,32 @@ ul, li {
   margin: 0;
   padding: 0;
 }
+
+.default-badge {
+  margin-right: 15px;
+  padding: 2px 5px;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  color: #FFFFFF;
+
+  &.event {
+    background-color: #1c4dff;
+  }
+
+  &.shop {
+    background-color: #9b9630;
+  }
+
+  &.inspection {
+    background-color: #682424;
+  }
+
+  &.notice {
+    background-color: #3b3b3b;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+

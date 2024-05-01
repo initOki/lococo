@@ -25,4 +25,27 @@
   .content-checked-item {
     border-bottom: 1px solid #707070;
   }
+
+  .todo-box {
+    display: grid;
+  }
+}
+
+.main-character-list {
+  display: flex;;
+
+  .character-item {
+    padding-bottom: 10px;
+   border-bottom: 1px solid #FFFFFF;
+
+   p {
+      margin-right: 10px;
+   }
+
+   button {
+      margin: 0;
+      padding: 0;
+      border: none;
+   }
+  }
 }
