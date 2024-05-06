@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 
 const LeftSideBar = () => {
   const [apiTokenValue, setApiTokenValue] = useState('');
-  const { isToken, setIsToken, apiToken, setApiToken } = useStore();
+  const { isToken, isLogin, setIsToken, apiToken, setApiToken } = useStore();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setApiToken(e.target.value);
@@ -54,25 +54,28 @@ const LeftSideBar = () => {
         <li className="mb-[10px]">
           <Link href="/kloa">클로아</Link>
         </li>
+        <li className="mb-[10px]">
+          <Link href="/setting">설정</Link>
+        </li>
       </ul>
 
-      <div>
-        <input
-          type="text" //
-          className={'token-input'}
-          value={apiToken}
-          onChange={(e) => handleChange(e)}
-          disabled={isToken}
-        />
-        <div className="button-box">
-          {isToken ? (
-            <button onClick={() => setIsToken(false)}>변경</button>
-          ) : (
-            <button onClick={handleComplete}>저장</button>
-          )}
-          <button>복사</button>
-        </div>
-      </div>
+      {/*<div>*/}
+      {/*  <input*/}
+      {/*    type="text" //*/}
+      {/*    className={'token-input'}*/}
+      {/*    value={apiToken}*/}
+      {/*    onChange={(e) => handleChange(e)}*/}
+      {/*    disabled={isToken}*/}
+      {/*  />*/}
+      {/*  <div className="button-box">*/}
+      {/*    {isToken ? (*/}
+      {/*      <button onClick={() => setIsToken(false)}>변경</button>*/}
+      {/*    ) : (*/}
+      {/*      <button onClick={handleComplete}>저장</button>*/}
+      {/*    )}*/}
+      {/*    <button>복사</button>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </div>
   );
 };
