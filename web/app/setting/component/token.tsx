@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useStore } from '@/store';
 import { supabase } from '@/utils/client';
 
@@ -15,6 +15,11 @@ const Token = () => {
       //
     }
   };
+
+  useEffect(() => {
+    if (!isLogin) return;
+    getLostArkTokenList();
+  }, [isLogin])
 
   return (
     <div className="content-box">

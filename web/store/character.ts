@@ -20,6 +20,7 @@ const state: CharacterState = {
   isCharacter: false,
   characterList: [],
   mainCharacter: '',
+  openCharacterUUID: ''
 };
 
 export const useCharacterSlice: StateCreator<CharacterSlice> = (set, get) => ({
