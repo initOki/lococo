@@ -4,7 +4,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/utils/client';
 
 const SaveToken = () => {
-  const { supaUserId, isLogin, setLostarkTokenList } = useStore();
+  const { supaUserId, isLogin, loginEmail, setLostarkTokenList } = useStore();
   const [token, setToken] = useState('');
 
   const savedLostarkToken = async () => {
@@ -12,10 +12,8 @@ const SaveToken = () => {
     try {
       const { data, error } = await supabase
         .from('user-lostark-token')
-        .insert([{ userId: supaUserId, lostark_token: token }])
+        .insert([{ userId: supaUserId, lostark_token: token, email: loginEmail }])
         .select();
-
-      console.log(data);
 
       getLostArkTokenList();
     } catch (error) {
@@ -25,7 +23,11 @@ const SaveToken = () => {
 
   const getLostArkTokenList = async () => {
     try {
-      const { data, error } = await supabase.from('user-lostark-token').select().eq('userId', supaUserId);
+      const { data, error } = await supabase
+        .from('user-lostark-token') //
+        .select()
+        .eq('userId', supaUserId)
+        .eq('used', true);
 
       if (!data) return;
       setLostarkTokenList(data);

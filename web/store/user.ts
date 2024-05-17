@@ -7,6 +7,7 @@ type UserState = {
   apiToken: string;
   supaToken: string;
   supaUserId: string;
+  loginEmail: string;
 };
 
 type UserAction = {
@@ -16,6 +17,7 @@ type UserAction = {
   setApiToken: (apiToken: string) => void;
   setSupaToken: (supaToken: string) => void;
   setSupaUserId: (supaUserId: string) => void;
+  setLoginEmail: (loginEmail: string) => void;
 };
 
 export type UserSlice = UserState & UserAction;
@@ -27,6 +29,7 @@ const state: UserState = {
   apiToken: '',
   supaToken: '',
   supaUserId: '',
+  loginEmail: '',
 };
 
 export const useUserSlice: StateCreator<UserSlice> = (set, get) => ({
@@ -59,6 +62,11 @@ export const useUserSlice: StateCreator<UserSlice> = (set, get) => ({
   setSupaUserId: (supaUserId) => {
     set(() => ({
       supaUserId: supaUserId,
+    }));
+  },
+  setLoginEmail: (loginEmail) => {
+    set(() => ({
+      loginEmail: loginEmail,
     }));
   },
 });
