@@ -6,3 +6,53 @@
         object-fit: cover;
     }
 }
+
+.default-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 10px;
+    border: 1px solid #a2a2a2;
+    border-radius: 6px;
+    overflow: hidden;
+
+    th {
+        background-color: #1c1c1c;
+        color: #FFFFFF;
+        padding: 5px;
+        border: 1px solid #a2a2a2;
+    }
+
+    thead {
+        border-bottom: 1px solid #a2a2a2;
+        td {
+            text-align: center;
+        }
+    }
+
+    td {
+        padding: 15px 10px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #3b3b3b;
+    }
+
+
+    tr:nth-child(odd) {
+        background-color: #1c1c1c;
+    }
+
+    tr.isSearched {
+        border: 1px solid #FFFFFF;
+        background-color: #3e4d80;
+
+        td:first-child {
+            color: #ff8700;
+        }
+
+        span.isHightlight {
+            color: #FFD700;
+        }
+    }
+}

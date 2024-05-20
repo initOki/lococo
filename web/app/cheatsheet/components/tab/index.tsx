@@ -9,6 +9,8 @@ const Tab = () => {
     <div>
       <div>
         <ul className="cheat-sheet-list">
+          <li onClick={() => setTabName('synergy')}>시너지 표</li>
+          <li>|</li>
           <li onClick={() => setTabName('valtan')}>발탄</li>
           <li onClick={() => setTabName('biackiss')}>비아키스</li>
           <li onClick={() => setTabName('koukuSaton')}>쿠크세이튼</li>

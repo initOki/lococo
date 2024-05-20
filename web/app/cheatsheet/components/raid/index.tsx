@@ -9,6 +9,7 @@ import Illiakan from './illiakan';
 import IvoryTower from './ivoryTower';
 import Kamen from './kamen';
 import Echidna from './echidna';
+import Synergy from './synergy';
 import './style.scss';
 
 const CheatSheetImageContainer = () => {
@@ -16,6 +17,7 @@ const CheatSheetImageContainer = () => {
 
   return (
     <div className="mt-[20px]">
+      {tabName === 'synergy' && <Synergy />}
       {tabName === 'valtan' && <Valtan />}
       {tabName === 'biackiss' && <Biackiss />}
       {tabName === 'koukuSaton' && <KoukuSaton />}

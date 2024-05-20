@@ -72,9 +72,11 @@ const Token = () => {
                 <div className="flex">
                   <input
                     type="radio"
-                    className="mr-[15px]"
+                    className={`mr-[15px] ${item.lostark_token === apiToken ? 'isUsed' : ''}`}
                     name="svaed-token"
                     onChange={() => setSelectedToken(item.lostark_token)}
+                    checked={selectedToken === item.lostark_token}
+                    disabled={item.lostark_token === apiToken}
                   />
                   <p className="w-full max-w-[250px] whitespace-nowrap overflow-hidden text-ellipsis">
                     {item.lostark_token}
@@ -92,7 +94,7 @@ const Token = () => {
               </div>
             );
           })}
-        <div className="token-button-box">
+        <div className="token-button-box mt-[20px]">
           <button className="default-button" onClick={() => lostarkToken()}>
             해당 토큰 사용
           </button>

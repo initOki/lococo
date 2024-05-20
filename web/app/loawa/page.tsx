@@ -15,12 +15,12 @@ export default function Loawa() {
       </div>
       <Toaster
         toastOptions={{
-          unstyled: true,
+          unstyled: false,
           classNames: {
-            error: 'bg-red-400',
-            success: 'text-green-400',
-            warning: 'text-yellow-400',
-            info: 'bg-blue-400',
+            error: 'bg-red-400 p-[20px] border-none text-white',
+            success: 'bg-green-400 p-[20px] border-none text-white',
+            warning: 'bg-yellow-400 p-[20px] border-none text-black',
+            info: 'bg-blue-400 p-[20px] border-none text-white',
           },
         }}
       />
