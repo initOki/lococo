@@ -12,6 +12,13 @@ const Tab = () => {
     const copy = [...characterList];
     copy.splice(index, 1);
     setCharacterList(copy);
+    if (copy.length > 0) {
+      console.log('enable');
+      setOpenCharacterUUID(copy[0].uuid);
+    } else {
+      console.log('disable');
+      setOpenCharacterUUID('');
+    }
   };
 
   return (

@@ -30,6 +30,7 @@ const NickName = () => {
     setCharacterList,
     setMainCharacter,
     setIsCharacter,
+    setOpenCharacterUUID,
   } = useStore();
   const [openCharacter, setOpenCharacter] = useState<any | null>(null);
   const [lazyWidth, lazyRef] = useGettingWidth();
@@ -43,6 +44,7 @@ const NickName = () => {
   };
 
   const getCharacterInfo = async () => {
+    if (apiToken === '') return toast.error('로그인 또는 토큰을 등록해주세요.');
     try {
       const response = await axios.get(
         `https://developer-lostark.game.onstove.com/characters/${mainCharacter}/siblings`,
@@ -81,7 +83,6 @@ const NickName = () => {
       copy.push(newData);
 
       setCharacterList(copy);
-      setIsCharacter(true);
       toast.success('캐릭터 조회 성공.');
     } catch (error) {
       //
@@ -127,10 +128,18 @@ const NickName = () => {
   // }, [characterList]);
 
   useEffect(() => {
-    if (characterList.length === 0) return;
-    const find = characterList.find((item) => item.uuid === openCharacterUUID);
+    if (characterList.length === 0) {
+      setOpenCharacter(null);
+      return;
+    }
+    const find = characterList.find((item) => item.uuid === openCharacterUUID) ?? null;
     if (find) {
       setOpenCharacter(find);
+    } else {
+      if (characterList.length > 0) {
+        setOpenCharacter(characterList[0]);
+        setOpenCharacterUUID(characterList[0].uuid);
+      }
     }
   }, [openCharacterUUID]);
 
@@ -141,9 +150,11 @@ const NickName = () => {
         <input
           type="text"
           value={mainCharacter}
-          className="ml-[20px]"
+          className="w-full ml-[20px]"
           onChange={(e) => handleChangeMainCharacter(e)}
-          disabled={isCharacter}
+          style={{
+            maxWidth: '200px',
+          }}
         />
         {isCharacter ? (
           <button onClick={() => setIsCharacter(false)}>변경</button>

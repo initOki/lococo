@@ -37,7 +37,7 @@ const LeftSideBar = () => {
           <Link href="/">공지사항</Link>
         </li>
         <li className="mb-[10px]">
-          <Link href="/homework">숙제</Link>
+          <Link href="/homework">TODO</Link>
         </li>
         {/* <li className="mb-[10px]">
           <Link href="/loatodo">로아 TODO</Link>

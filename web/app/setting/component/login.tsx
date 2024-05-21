@@ -178,7 +178,7 @@ const Login = () => {
               onChange={(e) => handleChangeSignUp(e)}
             />
           </div>
-          <div>
+          <div className="mt-[15px]">
             <button className="default-button" onClick={() => handleSignUp()}>
               계정생성
             </button>
@@ -206,7 +206,7 @@ const Login = () => {
               onChange={(e) => handleChangeSignIn(e)}
             />
           </div>
-          <div>
+          <div className="mt-[15px]">
             <button className="default-button" onClick={() => handleSignIn()}>
               로그인
             </button>

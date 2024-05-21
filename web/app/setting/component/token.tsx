@@ -4,12 +4,15 @@ import { supabase } from '@/utils/client';
 import { toast } from 'sonner';
 import CopyIcon from '@/ui/copy';
 import DeleteIcon from '@/ui/delete';
+import Loading from '@/ui/Loading';
 
 const Token = () => {
   const { isLogin, supaUserId, lostarkTokenList, apiToken, setLostarkTokenList, setApiToken } = useStore();
   const [selectedToken, setSelectedToken] = useState('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getLostArkTokenList = async () => {
+    setIsLoading(true);
     try {
       const { data, error } = await supabase
         .from('user-lostark-token') //
@@ -21,6 +24,8 @@ const Token = () => {
       setLostarkTokenList(data);
     } catch (error) {
       //
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -63,6 +68,11 @@ const Token = () => {
   return (
     <div className="content-box">
       {!isLogin && <div className="dim">로그인 후 사용 가능</div>}
+      {isLoading && (
+        <div className="dim">
+          <Loading />
+        </div>
+      )}
       <div>
         <p className="mb-[10px]">Token list</p>
         {lostarkTokenList &&
