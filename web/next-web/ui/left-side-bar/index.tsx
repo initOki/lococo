@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import './style.scss';
-import { useStore } from '@/store';
+import { useStore } from '../../store';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'sonner';

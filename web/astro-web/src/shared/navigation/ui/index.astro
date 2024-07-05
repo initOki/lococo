@@ -1,0 +1,31 @@
+---
+import SharedHeaderLink from '~shared/link/index.astro';
+import './style.scss';
+
+const linkList = [
+  {
+    name: '시너지',
+    href: '/synergy',
+  },
+  {
+    name: 'Todo',
+    href: '/todo',
+  },
+  {
+    name: '계정',
+    href: '/account',
+  },
+];
+---
+
+<nav>
+  <ul>
+    {
+      linkList.map((link) => (
+        <li>
+          <SharedHeaderLink href={link.href} name={link.name} />
+        </li>
+      ))
+    }
+  </ul>
+</nav>

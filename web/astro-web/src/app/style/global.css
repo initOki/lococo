@@ -1,0 +1,17 @@
+.default-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    color: #000000;
+    outline: none;
+}
+
+.default-button {
+    width: 100%;
+    padding: 5px 20px;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+}

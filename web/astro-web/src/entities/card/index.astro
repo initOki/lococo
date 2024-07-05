@@ -1,0 +1,13 @@
+---
+import CardUI from './ui/index.astro';
+
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<CardUI href={href} title={title} body={body} />

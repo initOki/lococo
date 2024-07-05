@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { UserSlice, useUserSlice } from '@/store/user';
-import { CharacterSlice, useCharacterSlice } from '@/store/character';
-import { RaidSlice, useRaidrSlice } from './raid';
+import { type UserSlice, useUserSlice } from './user';
+import { type CharacterSlice, useCharacterSlice } from './character';
+import { type RaidSlice, useRaidrSlice } from './raid';
 
 type Store = UserSlice & CharacterSlice & RaidSlice;
 

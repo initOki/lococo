@@ -1,0 +1,9 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import HeaderLink from './ui/index.astro';
+
+type Props = HTMLAttributes<'a'>;
+const { href, name, class: className, ...props } = Astro.props;
+---
+
+<HeaderLink href={href} name={name} class={className} {...props} />
