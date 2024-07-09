@@ -1,4 +1,10 @@
-const Loading = () => {
+type Props = {
+  w?: string;
+  h?: string;
+  className?: string;
+};
+
+const Loading = ({ w, h, className = '' }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +13,7 @@ const Loading = () => {
       width="200"
       height="200"
       style={{ shapeRendering: 'auto', display: 'block', background: 'transparent' }}
+      className={className}
     >
       <g>
         <path

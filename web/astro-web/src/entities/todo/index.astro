@@ -1,7 +1,19 @@
 ---
 import SearchCharacter from './ui/search-character';
+import SelectTab from './ui/select-tab';
+import CharacterList from './ui/character-list';
+
+import './style.scss';
 ---
 
 <div>
-  <SearchCharacter client:visible />
+  <div class="mb-[30px]">
+    <SearchCharacter client:load />
+  </div>
+  <div class="mb-[30px]">
+    <SelectTab client:load />
+  </div>
+  <div>
+    <CharacterList client:load />
+  </div>
 </div>

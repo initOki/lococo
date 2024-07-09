@@ -14,7 +14,7 @@ const state: RaidState = {
   tabName: '',
 };
 
-export const useRaidrSlice: StateCreator<RaidSlice> = (set, get) => ({
+export const useRaidSlice: StateCreator<RaidSlice> = (set, get) => ({
   ...state,
   setTabName: (tabName) => {
     set(() => ({

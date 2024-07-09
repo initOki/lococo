@@ -1,0 +1,12 @@
+---
+import LoginUI from './ui/login';
+import SaveTokenUI from './ui/save-token';
+import TokenListUI from './ui/token';
+import './style.scss';
+---
+
+<div class="grid-box">
+  <LoginUI client:load />
+  <TokenListUI client:load />
+  <SaveTokenUI client:load />
+</div>

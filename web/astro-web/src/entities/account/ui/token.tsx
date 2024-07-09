@@ -23,7 +23,7 @@ const Token = () => {
       if (!data) return;
       setLostarkTokenList(data);
     } catch (error) {
-      //
+      toast.error('토큰 조회 실패');
     } finally {
       setIsLoading(false);
     }
@@ -60,6 +60,10 @@ const Token = () => {
     setApiToken(selectedToken);
   };
 
+  const removeLostarkToken = () => {
+    setApiToken('');
+  };
+
   useEffect(() => {
     if (!isLogin) return;
     getLostArkTokenList();
@@ -74,7 +78,7 @@ const Token = () => {
         </div>
       )}
       <div>
-        <p className="mb-[10px]">Token list</p>
+        <p className="mb-[10px] text-[#FFFFFF]">Token list</p>
         {lostarkTokenList &&
           lostarkTokenList.map((item, _) => {
             return (
@@ -88,16 +92,16 @@ const Token = () => {
                     checked={selectedToken === item.lostark_token}
                     disabled={item.lostark_token === apiToken}
                   />
-                  <p className="w-full max-w-[250px] whitespace-nowrap overflow-hidden text-ellipsis">
+                  <p className="text-[#FFFFFF] w-full max-w-[250px] whitespace-nowrap overflow-hidden text-ellipsis">
                     {item.lostark_token}
                   </p>
                 </div>
 
                 <div className="">
-                  <button className="mr-[5px]" onClick={() => copyToken(item.lostark_token)}>
+                  <button className="mr-[5px] text-[#FFFFFF]" onClick={() => copyToken(item.lostark_token)}>
                     <CopyIcon />
                   </button>
-                  <button onClick={() => unusedToken(item)}>
+                  <button className="text-[#FFFFFF]" onClick={() => unusedToken(item)}>
                     <DeleteIcon />
                   </button>
                 </div>
@@ -105,9 +109,15 @@ const Token = () => {
             );
           })}
         <div className="token-button-box mt-[20px]">
-          <button className="default-button" onClick={() => lostarkToken()}>
-            해당 토큰 사용
-          </button>
+          {apiToken ? (
+            <button className="default-button" onClick={() => removeLostarkToken()}>
+              토큰 변경
+            </button>
+          ) : (
+            <button className="default-button" onClick={() => lostarkToken()}>
+              해당 토큰 사용
+            </button>
+          )}
           <button className="default-button" onClick={() => getLostArkTokenList()}>
             토큰 업데이트
           </button>

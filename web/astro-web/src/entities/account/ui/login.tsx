@@ -132,7 +132,7 @@ const Login = () => {
   }, [supaToken]);
 
   return (
-    <div className="content-box">
+    <div className="content-box self-start">
       {isLoading && (
         <div className="dim">
           <Loading />
@@ -140,7 +140,7 @@ const Login = () => {
       )}
       {isLogin && (
         <div className="dim">
-          <button onClick={() => handleLogout()} className="default-button max-w-[100px]">
+          <button onClick={() => handleLogout()} className="default-button max-w-[150px]">
             로그아웃
           </button>
         </div>
@@ -148,11 +148,11 @@ const Login = () => {
       <div className="mb-[15px]">
         {signUp ? (
           <button className="default-button" onClick={() => changeSignUp()}>
-            로그인하러 가기
+            로그인 하기
           </button>
         ) : (
           <button className="default-button" onClick={() => changeSignUp()}>
-            계정생성하러 가기
+            계정생성 하기
           </button>
         )}
       </div>
