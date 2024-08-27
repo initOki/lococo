@@ -65,7 +65,7 @@ const SaveToken = () => {
   };
 
   return (
-    <div className="content-box">
+    <div className="content-box mb-[10px]">
       {!isLogin && <div className="dim">로그인 후 사용 가능</div>}
       {isLoading && (
         <div className="dim">

@@ -7,7 +7,16 @@ import DeleteIcon from '~shared/icon/delete';
 import Loading from '~shared/loading/Loading';
 
 const Token = () => {
-  const { isLogin, supaUserId, lostarkTokenList, apiToken, setLostarkTokenList, setApiToken } = useStore();
+  const {
+    isLogin,
+    supaUserId,
+    lostarkTokenList,
+    apiToken,
+    lostarkTokenUUID,
+    setLostarkTokenList,
+    setApiToken,
+    setLostarkTokenUUID,
+  } = useStore();
   const [selectedToken, setSelectedToken] = useState('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -81,6 +90,10 @@ const Token = () => {
         <p className="mb-[10px] text-[#FFFFFF]">Token list</p>
         {lostarkTokenList &&
           lostarkTokenList.map((item, _) => {
+            // console.log('item.item_id: ', item.item_id);
+            // console.log('lostarkTokenUUID: ', lostarkTokenUUID);
+            console.log(item);
+
             return (
               <div key={item.uid} className="mb-[10px] pb-[5px] flex justify-between items-center token-item">
                 <div className="flex">
@@ -88,8 +101,11 @@ const Token = () => {
                     type="radio"
                     className={`mr-[15px] ${item.lostark_token === apiToken ? 'isUsed' : ''}`}
                     name="svaed-token"
-                    onChange={() => setSelectedToken(item.lostark_token)}
-                    checked={selectedToken === item.lostark_token}
+                    onChange={() => {
+                      setSelectedToken(item.lostark_token);
+                      setLostarkTokenUUID(item.uid);
+                    }}
+                    checked={lostarkTokenUUID === item.uid}
                     disabled={item.lostark_token === apiToken}
                   />
                   <p className="text-[#FFFFFF] w-full max-w-[250px] whitespace-nowrap overflow-hidden text-ellipsis">

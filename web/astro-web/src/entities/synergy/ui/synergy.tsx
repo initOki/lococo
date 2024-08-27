@@ -1,12 +1,16 @@
+'use client';
+
 import { useSynergy } from '../lib';
-import { useSynergyStates } from '../lib/use-state.ts';
+import { useState } from 'react';
 
 const Synergy = () => {
-  const { searchText, searchResult, setSearchResult, setSearchText } = useSynergyStates();
+  // const { searchText, searchResult, setSearchResult, setSearchText } = useSynergyStates();
+  const [searchText, setSearchText] = useState('');
+  const [searchResult, setSearchResult] = useState<any[]>([]);
   const { handleChange, highlight, returnSynergy, findSynergy } = useSynergy();
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="flex items-center">
         <input
           type="text"

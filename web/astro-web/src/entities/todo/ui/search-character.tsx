@@ -1,9 +1,9 @@
 import { type ChangeEvent, useState } from 'react';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import { useStore } from '~shared/store';
 import { toast } from 'sonner';
 import Loading from '~shared/loading/Loading.tsx';
-import { v4 as uuidv4 } from 'uuid';
 
 const SearchCharacter = () => {
   const { apiToken, characterList, setOpenCharacterUUID, setCharacterList } = useStore();
@@ -54,7 +54,7 @@ const SearchCharacter = () => {
       setCharacterList(nowCharacterList);
       setCharacterName('');
     } catch (error) {
-      //
+      toast.error('캐릭터 조회 실패');
     } finally {
       setIsLoading(false);
     }

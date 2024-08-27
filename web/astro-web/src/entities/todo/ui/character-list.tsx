@@ -1,6 +1,7 @@
 import { useStore } from '~shared/store';
 import { useEffect, useRef, useState } from 'react';
 import StarIcon from '~shared/icon/star.tsx';
+import { getHeight } from '~shared/get-height';
 
 const CharacterList = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -56,7 +57,7 @@ const CharacterList = () => {
   }, [openCharacterUUID]);
 
   useEffect(() => {
-    setHeight(window.innerHeight - 300);
+    getHeight(300);
   }, []);
 
   useEffect(() => {
